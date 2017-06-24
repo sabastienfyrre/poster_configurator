@@ -11,6 +11,20 @@ var AppComponent = (function () {
     function AppComponent() {
         this.title = 'POSTERIZER';
     }
+    AppComponent.prototype.handleImage = function (e) {
+        var imageLoader = document.getElementById('imageLoader');
+        var canvas = document.getElementById('imageCanvas');
+        var ctx = canvas.getContext('2d');
+        var reader = new FileReader();
+        reader.onload = function (event) {
+            var img = new Image();
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0);
+            };
+            img.src = event.target.result;
+        };
+        reader.readAsDataURL(e.target.files[0]);
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
