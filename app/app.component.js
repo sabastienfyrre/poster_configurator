@@ -18,7 +18,6 @@ var AppComponent = (function () {
             value: null,
             description: null
         };
-        this.orientation = "";
     }
     AppComponent.prototype.ngOnInit = function () {
         this.entries = [
@@ -41,16 +40,6 @@ var AppComponent = (function () {
         var canvas = document.getElementById('imageCanvas');
         var ctx = canvas.getContext('2d');
         var reader = new FileReader();
-        if (this.orientation == 'Portrait') {
-            console.log(this.orientation);
-            ctx.canvas.width = '400%';
-            ctx.canvas.height = '600%';
-        }
-        else {
-            console.log(this.orientation);
-            ctx.canvas.width = '700%';
-            ctx.canvas.height = '400%';
-        }
         reader.onload = function (event) {
             var img = new Image();
             img.onload = function () {
@@ -73,19 +62,21 @@ var AppComponent = (function () {
         };
         reader.readAsDataURL(e.target.files[0]);
     };
-    // handleOrientation() {
-    //     let portrait = document.getElementById('orientationRB_1').getAttribute('checked');
-    //     if (portrait == 'true') {
-    //         alert('portrait');
-    //     }
-    //     else {
-    //         alert('landscape');
-    //     }
-    //     return portrait;
-    // }
     AppComponent.prototype.onOrientationChange = function (entry) {
         this.selectedEntry = Object.assign({}, this.selectedEntry, entry);
-        this.orientation = entry.description;
+        var canvasDiv = document.getElementById('canvasDiv');
+        var canvas = document.getElementById('imageCanvas');
+        // //apply selected orientation
+        // if (entry.description == 'Portrait') {
+        //     console.log(entry.description);
+        //     canvasDiv.style.width = (window.innerWidth/0.55).toString;
+        //     canvasDiv.style.height = window.innerWidth / 0.85;
+        // }
+        // else {
+        //     console.log(entry.description);
+        //     canvas.style.maxwidth = '500';
+        //     canvas.style.maxheight = '300';
+        // }
     };
     return AppComponent;
 }());

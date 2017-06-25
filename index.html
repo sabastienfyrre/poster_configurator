@@ -9,6 +9,10 @@
     <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="app/app.component.css" rel="stylesheet" />
 
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
     
@@ -24,7 +28,31 @@
 </head>
 
 <body>
-    <pc-app>Loading Posterizer...</pc-app>
+    <div class="container">
+        <h1>POSTERIZER</h1>
+        <div class="row">
+            <div class="col-md-4 col-sm-5">
+                <div class="tabs-left">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#a" data-toggle="tab"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></li>
+                        <li><a href="#b" data-toggle="tab"><span class="glyphicon glyphicon-tint"></span></a></li>
+                        <li><a href="#c" data-toggle="tab"><span class="glyphicon glyphicon-font"></span></a></li>
+                    </ul>
+                    <pc-app>Loading Posterizer...</pc-app>
+                </div>
+                <!-- /tabbable -->
+            </div>
+            <!-- /col -->
+        </div>
+        <!-- /row -->
+        
+    </div>
+    <!-- /container -->
+    <div id="canvasDiv">
+        <canvas id="imageCanvas" width="300%" height="400%"></canvas>
+        <canvas id="imageCanvasCaptionLayer" width="300%" height="400%"></canvas>
+    </div>
+    <script src="./app/assets/js/tabs.js"></script>
 </body>
 
 </html>

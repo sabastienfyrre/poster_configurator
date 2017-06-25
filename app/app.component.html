@@ -1,29 +1,27 @@
-<div>
-    <h1>
-        {{title}}
-    </h1>
-    
-    <div ng-controller="AppController">
-        <label>Image File:</label><br/>
-        <input type="file" id="imageLoader" name="imageLoader" (change)="handleImage($event)" />
-        <table>
-            <tbody>
-                <tr *ngFor="let entry of entries; let idx = index">
-                    <td>{{ entry.description }}</td>
-                    <td>
-                        <input type="radio" name="certificategroup" 
-                        (change)="onOrientationChange(entry)"
-                        [checked]="idx === 0"
-                        [value]="entry.value">
-                        <!--<input type="radio" id="orientationRB_1" name="orientation" checked="true" value="Portrait">Portrait<br/>
-                        <input type="radio" id="orientationRB_2" name="orientation" value="Landscape">Landscape<br/>-->
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <br/>
-        <div id="canvasDiv">
-            <canvas id="imageCanvas" width="400%" height="600%"></canvas>
+<div ng-controller="AppController">
+        <div class="tab-content">
+            <div class="tab-pane active" id="a">
+                <h2>Image</h2>
+                <input type="file" id="imageLoader" name="imageLoader" (change)="handleImage($event)" />
+                <br />
+                <table>
+                    <tbody>
+                        <tr *ngFor="let entry of entries; let idx = index">
+                            <td>{{ entry.description }}</td>
+                            <td>
+                                <input type="radio" name="certificategroup" (change)="onOrientationChange(entry)" [checked]="idx === 0" [value]="entry.value">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane" id="b">
+                <h2>Background Color</h2>
+                <pc-colorPicker>Loading Color Picker...</pc-colorPicker>
+            </div>
+            <div class="tab-pane" id="c">
+                <h2>Image Caption</h2>
+                <pc-captionAdder>Loading Caption Editor...</pc-captionAdder>
+            </div>
         </div>
     </div>
-</div>
