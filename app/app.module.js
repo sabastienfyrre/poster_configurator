@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var colorPicker_component_1 = require("./colorPicker/colorPicker.component");
 var captionAdder_component_1 = require("./captionAdder/captionAdder.component");
@@ -19,7 +20,8 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [
-            platform_browser_1.BrowserModule
+            platform_browser_1.BrowserModule,
+            forms_1.FormsModule
         ],
         declarations: [
             app_component_1.AppComponent,
@@ -27,8 +29,7 @@ AppModule = __decorate([
             captionAdder_component_1.CaptionAdderComponent
         ],
         bootstrap: [
-            app_component_1.AppComponent,
-            colorPicker_component_1.ColorPickerComponent
+            app_component_1.AppComponent
         ]
     })
 ], AppModule);
