@@ -19,13 +19,28 @@ h1 {
   text-align: center;
 }
 
-canvas{
-    border: 1px solid;
-    background-color: #fff;
-    position: absolute; 
-    left:20%;
-    right:20%;
-    top: 43%;
+@media all and (orientation:portrait){
+  canvas{
+      border: 1px solid;
+      background-color: #fff;
+      position: absolute; 
+      left:50%;
+      right:20%;
+      top: 43%;
+      margin-left: -150px;
+  }
+}
+
+@media all and (orientation:landscape){
+  canvas{
+      border: 1px solid;
+      background-color: #fff;
+      position: absolute; 
+      left:50%;
+      right:20%;
+      top: 250px;
+      margin-left: -150px;
+  }
 }
 
 #imageCanvas{
