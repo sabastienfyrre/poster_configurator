@@ -23,8 +23,9 @@ canvas{
     border: 1px solid;
     background-color: #fff;
     position: absolute; 
-    left: 25%; 
-    top: 40%;
+    left:20%;
+    right:20%;
+    top: 43%;
 }
 
 #imageCanvas{

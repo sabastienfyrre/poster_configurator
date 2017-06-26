@@ -2,8 +2,7 @@
         <div class="tab-content">
             <div class="tab-pane active" id="a">
                 <h2>Image</h2>
-                <input type="file" id="imageLoader" name="imageLoader" (change)="handleImage($event)" />
-                <br />
+                
                 <table>
                     <tbody>
                         <tr *ngFor="let entry of entries; let idx = index">
@@ -14,6 +13,8 @@
                         </tr>
                     </tbody>
                 </table>
+                <br/>
+                <input type="file" id="imageLoader" name="imageLoader" (change)="handleImage($event)" />
             </div>
             <div class="tab-pane" id="b">
                 <h2>Background Color</h2>
