@@ -1,0 +1,63 @@
+button{
+    border-radius:50%;
+    height:35px;
+    width:35px;
+    border-style:solid;
+}
+
+button span{
+    height:20px;
+    width:20px;
+    border-radius: 50%;
+    display:block;
+}
+
+button.white span {
+    border:1px solid #fff;
+    background: #fff;
+}
+
+button.red span {
+    border:1px solid #f00;
+    background: #f00;
+}
+
+button.orange span {
+    border:1px solid #ff8000;
+    background: #ff8000;
+}
+
+button.yellow span {
+    border:1px solid #ffff00;
+    background: #ffff00;
+}
+
+button.green span {
+    border:1px solid #00cc00;
+    background: #00cc00;
+}
+
+button.blue span {
+    border:1px solid #00f;
+    background: #00f;
+}
+
+button.indigo span {
+    border:1px solid #6600cc;
+    background: #6600cc;
+}
+
+button.violet span {
+    border:1px solid #990099;
+    background: #990099;
+}
+
+button.gray span {
+    border:1px solid #999999;
+    background: #999999;
+}
+
+button.black span {
+    border:1px solid #000;
+    background: #000;
+}
